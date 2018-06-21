@@ -1,0 +1,38 @@
+{
+  "name": "nuxt-cockpit-static-blog",
+  "version": "1.0.0",
+  "description": "A static blog built with Nuxt.js and Cockpit headless CMS.",
+  "author": "will Browning - willbrowning.me",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@nuxtjs/sitemap": "^0.1.1",
+    "autoprefixer": "^8.6.3",
+    "axios": "^0.18.0",
+    "collect.js": "^4.0.19",
+    "dotenv": "^6.0.0",
+    "glob-all": "^3.1.0",
+    "highlight.js": "^9.12.0",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "marked": "^0.4.0",
+    "moment": "^2.22.2",
+    "nuxt": "^1.0.0",
+    "purgecss-webpack-plugin": "^1.2.0",
+    "tailwindcss": "^0.5.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0"
+  }
+}
