@@ -1,6 +1,6 @@
 # A Static Blog Built with Nuxt.js, Tailwindcss and using Cockpit as a Headless CMS
 
-> A an example of a statically generated blog using Nuxt.js - [Building a Static Blog with Nuxt.js and Cockpit - Part 1: Setup](https://willbrowning.me/building-a-static-blog-with-nuxt-js-and-cockpit-part-1-setup)
+> An example of a statically generated blog using Nuxt.js. From the blog post - [Building a Static Blog with Nuxt.js and Cockpit - Part 1: Setup](https://willbrowning.me/building-a-static-blog-with-nuxt-js-and-cockpit-part-1-setup)
 
 ## Build Setup
 
