@@ -107,7 +107,9 @@ module.exports = {
   ** Build configuration
   */    
   build: {
+    analyze: true,
     extractCSS: true,
+    vendor: ['axios', 'highlight.js/lib/highlight.js'],
     /*
     ** Run ESLint on save
     */

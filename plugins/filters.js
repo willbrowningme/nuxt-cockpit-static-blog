@@ -1,8 +1,12 @@
 import Vue from 'vue'
-import highlightjs from 'highlight.js'
+import highlightjs from 'highlight.js/lib/highlight.js'
 import marked, { Renderer } from 'marked'
 const moment = require('moment')
 
+// Register only the languages we intent to use with highlight.js
+highlightjs.registerLanguage('php', require('highlight.js/lib/languages/php'))
+highlightjs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
+highlightjs.registerLanguage('css', require('highlight.js/lib/languages/css'))
 
 // Create your custom renderer.
 const renderer = new Renderer()
