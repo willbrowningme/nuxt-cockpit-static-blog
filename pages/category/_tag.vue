@@ -34,12 +34,12 @@ export default {
     if (payload) {
       return { posts: payload, category: params.tag }
     } else {
-      let { data } = await axios.post(process.env.POSTS_URL, 
+      let { data } = await axios.post(process.env.POSTS_URL,
       JSON.stringify({
           filter: { published: true, tags: { $has:params.tag } },
           sort: {_created:-1},
           populate: 1
-        }),  
+        }),
       {
         headers: { 'Content-Type': 'application/json' }
       })

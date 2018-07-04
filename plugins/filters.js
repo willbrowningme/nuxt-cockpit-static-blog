@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import highlightjs from 'highlight.js/lib/highlight.js'
 import marked, { Renderer } from 'marked'
-const moment = require('moment')
+// Changed to dayjs here as it is much more lightweight than moment
+const dayjs = require('dayjs')
+import advancedFormat from 'dayjs/plugin/advancedFormat'
+dayjs.extend(advancedFormat)
 
 // Register only the languages we intent to use with highlight.js
 highlightjs.registerLanguage('php', require('highlight.js/lib/languages/php'))
@@ -27,5 +30,5 @@ Vue.filter('parseMd', function(content) {
 })
 
 Vue.filter('toDate', function(timestamp) {
-  return moment(timestamp*1000).format('Do MMM YY')
+  return dayjs(timestamp*1000).format('Do MMM YY')
 })

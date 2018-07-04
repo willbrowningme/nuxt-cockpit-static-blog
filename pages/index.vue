@@ -30,12 +30,12 @@ import axios from 'axios'
 
 export default {
   async asyncData ({ error }) {
-    let { data } = await axios.post(process.env.POSTS_URL, 
+    let { data } = await axios.post(process.env.POSTS_URL,
     JSON.stringify({
         filter: { published: true },
         sort: {_created:-1},
         populate: 1
-      }),  
+      }),
     {
       headers: { 'Content-Type': 'application/json' }
     })
