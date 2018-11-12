@@ -1,12 +1,11 @@
 import Vue from 'vue'
-import highlightjs from 'highlight.js/lib/highlight.js'
+import highlightjs from 'highlight.js'
 import marked, { Renderer } from 'marked'
-// Changed to dayjs here as it is much more lightweight than moment
 const dayjs = require('dayjs')
 import advancedFormat from 'dayjs/plugin/advancedFormat'
 dayjs.extend(advancedFormat)
 
-// Register only the languages we intent to use with highlight.js
+// Only import the languages that you need to keep our js bundle small
 highlightjs.registerLanguage('php', require('highlight.js/lib/languages/php'))
 highlightjs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
 highlightjs.registerLanguage('css', require('highlight.js/lib/languages/css'))
@@ -20,7 +19,7 @@ renderer.code = (code, language) => {
   const highlighted = validLang ? highlightjs.highlight(language, code).value : code
   // Render the highlighted code with `hljs` class.
   return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`
-};
+}
 
 // Set the renderer to marked.
 marked.setOptions({ renderer })

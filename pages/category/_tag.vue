@@ -5,7 +5,7 @@
       <ul class="flex flex-col w-full p-0">
         <li class="mb-6 w-full list-reset" v-for="(post, key) in posts" :key="key">
           <div class="text-grey-dark font-bold text-sm tracking-wide">
-            {{ post._created | toDate }} |
+            {{ post._created | toDate }}
             <a v-for="(tag, key) in post.tags" :key="key" :href="'/category/'+tag" class="ml-1 no-underline">{{ tag }}</a>
           </div>
 
@@ -27,14 +27,12 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
-  async asyncData ({ params, error, payload }) {
+  async asyncData ({ app, params, error, payload }) {
     if (payload) {
       return { posts: payload, category: params.tag }
     } else {
-      let { data } = await axios.post(process.env.POSTS_URL,
+      let { data } = await app.$axios.post(process.env.POSTS_URL,
       JSON.stringify({
           filter: { published: true, tags: { $has:params.tag } },
           sort: {_created:-1},
@@ -53,7 +51,10 @@ export default {
   },
   head () {
     return {
-      title: `Posts tagged with ${this.category}`
+      title: `Posts tagged with ${this.category}`,
+      meta: [
+        { hid: 'description', name: 'description', content: `All blog posts categorised as ${this.category}.` },
+      ]
     }
   }
 }

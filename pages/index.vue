@@ -4,7 +4,7 @@
       <ul class="flex flex-col w-full p-0">
         <li class="mb-6 w-full list-reset" v-for="(post, key) in posts" :key="key">
           <div class="text-grey-dark font-bold text-sm tracking-wide">
-            {{ post._created | toDate }} |
+            {{ post._created | toDate }}
             <a v-for="tag in post.tags" :key="tag" :href="'/category/'+tag" class="ml-1 no-underline">{{ tag }}</a>
           </div>
 
@@ -26,11 +26,9 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
-  async asyncData ({ error }) {
-    let { data } = await axios.post(process.env.POSTS_URL,
+  async asyncData ({ app }) {
+    const { data } = await app.$axios.post(process.env.POSTS_URL,
     JSON.stringify({
         filter: { published: true },
         sort: {_created:-1},

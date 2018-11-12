@@ -1,0 +1,21 @@
+@tailwind preflight;
+
+@tailwind components;
+
+.content {
+  width: 50rem;
+}
+
+.markdown p {
+  @apply mt-0 mb-6;
+}
+
+.markdown ul {
+  @apply mb-6;
+}
+
+pre {
+  @apply my-8;
+}
+
+@tailwind utilities;

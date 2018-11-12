@@ -1,8 +1,9 @@
 require('dotenv').config()
+
 const PurgecssPlugin = require('purgecss-webpack-plugin')
 const glob = require('glob-all')
 const path = require('path')
-const axios = require('axios') // we'll need this later for our dynamic routes
+import axios from 'axios' // we'll need this later for our dynamic routes
 const collect = require('collect.js')
 
 class TailwindExtractor {
@@ -12,11 +13,13 @@ class TailwindExtractor {
 }
 
 module.exports = {
+  mode: 'universal',
+
   /*
   ** Headers of the page
   */
   head: {
-    title: 'nuxt-cockpit-static-blog',
+    title: 'Nuxt Cockpit Static Blog',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -26,16 +29,42 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  modules: ['@nuxtjs/sitemap'],
-  plugins: ['~/plugins/filters.js'],
+
   /*
-  ** Customize the progress bar color
+  ** Customize the progress-bar color
   */
-  loading: { color: '#3B8070' },
+  loading: { color: '#fff' },
+
+  /*
+  ** Global CSS
+  */
   css: [
-    '~/assets/css/main.less',
+    '@/assets/css/main.css',
     'highlight.js/styles/dracula.css'
   ],
+
+  /*
+  ** Plugins to load before mounting the App
+  */
+  plugins: [
+    '~/plugins/filters.js'
+  ],
+
+  /*
+  ** Nuxt.js modules
+  */
+  modules: [
+    // Doc: https://github.com/nuxt-community/axios-module#usage
+    '@nuxtjs/axios',
+    '@nuxtjs/sitemap'
+  ],
+  /*
+  ** Axios module configuration
+  */
+  axios: {
+    // See https://github.com/nuxt-community/axios-module#options
+  },
+
   generate: {
     routes: async () => {
       let { data } = await axios.post(process.env.POSTS_URL,
@@ -74,6 +103,7 @@ module.exports = {
       return posts.concat(tags)
     }
   },
+
   sitemap: {
     path: '/sitemap.xml',
     hostname: process.env.URL,
@@ -103,24 +133,16 @@ module.exports = {
       return posts.concat(tags)
     }
   },
+
   /*
   ** Build configuration
   */
   build: {
-    //analyze: true,
     extractCSS: true,
     /*
-    ** Run ESLint on save
+    ** You can extend webpack config here
     */
-    extend (config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
+    extend (config, { isDev }) {
       if (!isDev) {
         // Remove unused CSS using purgecss. See https://github.com/FullHuman/purgecss
         // for more information about purgecss.
@@ -136,7 +158,6 @@ module.exports = {
             extractors: [
               {
                 extractor: TailwindExtractor,
-
                 // Specify the file extensions to include when scanning for
                 // class names.
                 extensions: ["html", "vue"]
