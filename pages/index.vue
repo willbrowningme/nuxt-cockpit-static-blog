@@ -21,16 +21,22 @@
           </a>
         </li>
       </ul>
+      <div v-if="hasNext" class="flex justify-center mt-8">
+        <a href="/blog/2" class="text-sm no-underline">
+          Next Page
+        </a>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  async asyncData ({ app }) {
+  async asyncData ({ app, error }) {
     const { data } = await app.$axios.post(process.env.POSTS_URL,
     JSON.stringify({
         filter: { published: true },
+        limit: process.env.PER_PAGE,
         sort: {_created:-1},
         populate: 1
       }),
@@ -38,7 +44,11 @@ export default {
       headers: { 'Content-Type': 'application/json' }
     })
 
-    return { posts: data.entries }
+    if (!data.entries[0]) {
+      return error({ message: '404 Page not found', statusCode: 404 })
+    }
+
+    return { posts: data.entries, hasNext: process.env.PER_PAGE < data.total }
   }
 }
 </script>

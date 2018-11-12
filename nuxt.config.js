@@ -6,6 +6,8 @@ const path = require('path')
 import axios from 'axios' // we'll need this later for our dynamic routes
 const collect = require('collect.js')
 
+const perPage = Number(process.env.PER_PAGE)
+
 class TailwindExtractor {
   static extract(content) {
     return content.match(/[A-z0-9-:\/]+/g) || [];
@@ -100,6 +102,23 @@ module.exports = {
         }
       }).all()
 
+      if(perPage < data.total) {
+        let pages = collection
+        .take(perPage-data.total)
+        .chunk(perPage)
+        .map((items, page) => {
+          return {
+            route: `blog/${page+2}`,
+            payload: {
+              posts: items.all(),
+              hasNext: data.total > (page+2)*perPage
+            }
+          }
+        }).all()
+
+        return posts.concat(tags,pages)
+      }
+
       return posts.concat(tags)
     }
   },
@@ -129,6 +148,16 @@ module.exports = {
       .all()
 
       let posts = collection.map(post => post.title_slug).all()
+
+      if(perPage < data.total) {
+        let pages = collection
+        .take(perPage-data.total)
+        .chunk(perPage)
+        .map((items, page) => `blog/${page+2}`)
+        .all()
+
+        return posts.concat(tags,pages)
+      }
 
       return posts.concat(tags)
     }
