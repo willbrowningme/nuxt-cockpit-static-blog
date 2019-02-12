@@ -106,12 +106,14 @@ module.exports = {
         let pages = collection
         .take(perPage-data.total)
         .chunk(perPage)
-        .map((items, page) => {
+        .map((items, key) => {
+          let currentPage = key + 2
+
           return {
-            route: `blog/${page+2}`,
+            route: `blog/${currentPage}`,
             payload: {
               posts: items.all(),
-              hasNext: data.total > (page+2)*perPage
+              hasNext: data.total > currentPage*perPage
             }
           }
         }).all()
@@ -153,7 +155,7 @@ module.exports = {
         let pages = collection
         .take(perPage-data.total)
         .chunk(perPage)
-        .map((items, page) => `blog/${page+2}`)
+        .map((items, key) => `blog/${key+2}`)
         .all()
 
         return posts.concat(tags,pages)
