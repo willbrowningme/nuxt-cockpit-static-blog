@@ -52,7 +52,7 @@ export default {
         headers: { 'Content-Type': 'application/json' }
       })
 
-      if (!data.entries[0]) {
+      if (!data.entries) {
         return error({ message: '404 Page not found', statusCode: 404 })
       }
 
