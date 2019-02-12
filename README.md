@@ -5,8 +5,10 @@
 ## Build Setup
 
 ``` bash
-# Rename .env.example to .env and enter your Cockpit details
+# Rename .env.example to .env
 $ mv .env.example .env
+
+# Edit .env and enter your Cockpit API details
 
 # install dependencies
 $ npm install # Or yarn install
