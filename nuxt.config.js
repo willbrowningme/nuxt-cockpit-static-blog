@@ -3,7 +3,7 @@ require('dotenv').config()
 const PurgecssPlugin = require('purgecss-webpack-plugin')
 const glob = require('glob-all')
 const path = require('path')
-import axios from 'axios' // we'll need this later for our dynamic routes
+const axios = require('axios') // we'll need this later for our dynamic routes
 const collect = require('collect.js')
 
 const perPage = Number(process.env.PER_PAGE)
@@ -16,7 +16,9 @@ class TailwindExtractor {
 
 module.exports = {
   mode: 'universal',
-
+  env: {
+    searchUrl: process.env.SEARCH_URL
+  },
   /*
   ** Headers of the page
   */

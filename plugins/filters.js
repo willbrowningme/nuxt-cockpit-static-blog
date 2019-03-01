@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import highlightjs from 'highlight.js'
 import marked, { Renderer } from 'marked'
-const dayjs = require('dayjs')
+import dayjs from 'dayjs'
 import advancedFormat from 'dayjs/plugin/advancedFormat'
 dayjs.extend(advancedFormat)
 
