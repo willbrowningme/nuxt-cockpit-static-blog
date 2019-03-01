@@ -13,7 +13,7 @@
         <div v-if="results.length !==0" class="search-results">
           <a v-for='result in results' :key="result.title_slug" :href="'/'+result.title_slug" class="block text-grey-darkest no-underline p-3 text-left">
             <span v-html="result._highlightResult.title.value" class="block font-bold mb-1"></span>
-            <span v-html="result._snippetResult.content.value"></span>
+            <span v-html="result._snippetResult.excerpt.value"></span>
           </a>
         </div>
 
