@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row justify-center w-screen">
+  <div class="flex flex-row justify-center">
     <div class="overflow-hidden content flex flex-col p-4 md:p-8">
       <page-header/>
       <page-nav/>

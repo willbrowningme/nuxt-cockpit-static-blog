@@ -17,7 +17,8 @@ class TailwindExtractor {
 module.exports = {
   mode: 'universal',
   env: {
-    searchUrl: process.env.SEARCH_URL
+    searchUrl: process.env.SEARCH_URL,
+    contactUrl: process.env.CONTACT_URL,
   },
   /*
   ** Headers of the page
