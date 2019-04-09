@@ -4,6 +4,7 @@ import marked, { Renderer } from 'marked'
 import dayjs from 'dayjs'
 import advancedFormat from 'dayjs/plugin/advancedFormat'
 dayjs.extend(advancedFormat)
+const sanitizeHtml = require('sanitize-html')
 
 // Only import the languages that you need to keep our js bundle small
 highlightjs.registerLanguage('php', require('highlight.js/lib/languages/php'))
@@ -25,7 +26,9 @@ renderer.code = (code, language) => {
 marked.setOptions({ renderer })
 
 Vue.filter('parseMd', function(content) {
-    return marked(content)
+  let clean = sanitizeHtml(content)
+
+  return marked(clean)
 })
 
 Vue.filter('toDate', function(timestamp) {

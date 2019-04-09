@@ -1,12 +1,20 @@
 <template>
   <section>
     <div class=my-8>
-      <h1 class="mb-6">Posts tagged with "{{ category }}"</h1>
+      <h2 class="mb-6">Posts tagged with "{{ category }}"</h2>
       <ul class="flex flex-col w-full p-0">
         <li class="mb-6 w-full list-reset" v-for="(post, key) in posts" :key="key">
           <div class="text-grey-dark font-bold text-sm tracking-wide">
             {{ post._created | toDate }}
-            <a v-for="(tag, key) in post.tags" :key="key" :href="'/category/'+tag" class="ml-1 no-underline">{{ tag }}</a>
+            <span class="ml-1 text-xs">•</span>
+            <a v-for="tag in post.tags" :key="tag" :href="'/category/'+tag" class="ml-1 no-underline">#{{ tag }}</a>
+            <span class="mx-1 text-xs">•</span>
+            <span>
+              {{ post.comments ? post.comments.length : 0 }}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="12" height="12" preserveAspectRatio="xMinYMin" class="text-grey-dark fill-current">
+                <path d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z"></path>
+              </svg>
+            </span>
           </div>
 
           <a :href="'/'+post.title_slug" class="no-underline">

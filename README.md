@@ -2,6 +2,8 @@
 
 > An example of a statically generated blog using Nuxt.js. From the blog post - [Building a Static Blog with Nuxt.js and Cockpit Headless CMS - Part 1: Setup](https://willbrowning.me/building-a-static-blog-with-nuxt-js-and-cockpit-headless-cms-part-1-setup/)
 
+A live demo of this site can be seen here - [https://nuxt-cockpit-static-blog.netlify.com](https://nuxt-cockpit-static-blog.netlify.com/)
+
 ## Build Setup
 
 ``` bash

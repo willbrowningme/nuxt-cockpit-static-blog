@@ -1,14 +1,17 @@
 <template>
   <section class="my-8">
     <div class="text-center">
-      <h1 class="mb-6">Search Page</h1>
-      <p>
+      <h2 class="mb-6">Search Page</h2>
+      <p class="mb-4">
         This is a live search example using Algolia and Cockpit!
       </p>
+      <a href="https://www.algolia.com" target="_blank" rel="nofollow noreferrer noopener">
+        <img src="search-by-algolia-light-background.png" class="h-6">
+      </a>
 
       <div class="my-8">
 
-        <input type="text" name="searchTerm" v-model="searchTerm" placeholder="Search Posts..." class="text-center block mb-4 shadow rounded w-full py-2 px-3 text-dark-grey">
+        <input type="text" name="searchTerm" v-model="searchTerm" placeholder="Search Posts..." class="text-center block mt-2 bg-grey-lighter rounded w-full py-2 px-3">
 
         <div v-if="results.length !==0" class="search-results">
           <a v-for='result in results' :key="result.title_slug" :href="'/'+result.title_slug" class="block text-grey-darkest no-underline p-3 text-left">

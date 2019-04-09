@@ -18,7 +18,8 @@ module.exports = {
   mode: 'universal',
   env: {
     searchUrl: process.env.SEARCH_URL,
-    contactUrl: process.env.CONTACT_URL,
+    contactUrl: `${process.env.BASE_URL}/api/forms/submit/contact?token=${process.env.FORMS_TOKEN}`,
+    commentUrl: `${process.env.BASE_URL}/api/forms/submit/comments?token=${process.env.FORMS_TOKEN}`,
   },
   /*
   ** Headers of the page

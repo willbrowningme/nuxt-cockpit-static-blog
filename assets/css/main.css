@@ -14,10 +14,39 @@
   @apply mb-6;
 }
 
-pre {
+.markdown pre {
   @apply my-8;
 }
 
+.comment {
+  @apply whitespace-pre-wrap;
+}
+
+.comment p {
+  @apply mb-4 inline-block;
+}
+
+.comment pre {
+  @apply my-4;
+}
+
+.comment p:last-child {
+  @apply mb-0;
+}
+
+table {
+  @apply overflow-auto w-full;
+}
+
+table tr {
+  @apply bg-white border-t border-grey-light;
+}
+
+table th, table td {
+  @apply border border-grey-light py-2 px-4;
+}
+
+/* purgecss ignore */
 .search-results em {
   @apply roman bg-blue-lighter;
 }

@@ -1,0 +1,3 @@
+# Redirect blog
+/blog / 301!
+/blog/1 / 301!
