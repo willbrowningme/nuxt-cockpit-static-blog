@@ -34,6 +34,7 @@
   @apply mb-0;
 }
 
+/* purgecss start ignore */
 table {
   @apply overflow-auto w-full;
 }
@@ -46,9 +47,10 @@ table th, table td {
   @apply border border-grey-light py-2 px-4;
 }
 
-/* purgecss ignore */
+
 .search-results em {
   @apply roman bg-blue-lighter;
 }
+/* purgecss end ignore */
 
 @tailwind utilities;
