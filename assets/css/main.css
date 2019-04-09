@@ -37,6 +37,7 @@
 /* purgecss start ignore */
 table {
   @apply overflow-auto w-full;
+  border-spacing: 0;
 }
 
 table tr {
