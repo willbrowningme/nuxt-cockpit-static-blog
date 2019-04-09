@@ -6,7 +6,7 @@
           <div class="text-grey-dark font-bold text-sm tracking-wide">
             {{ post._created | toDate }}
             <span class="ml-1 text-xs">•</span>
-            <a v-for="tag in post.tags" :key="tag" :href="'/category/'+tag" class="ml-1 no-underline">#{{ tag }}</a>
+            <a v-for="tag in post.tags" :key="tag" :href="'/category/'+tag" class="text-blue-light ml-1 no-underline">#{{ tag }}</a>
             <span class="mx-1 text-xs">•</span>
             <span>
               {{ post.comments ? post.comments.length : 0 }}
@@ -30,7 +30,7 @@
         </li>
       </ul>
       <div v-if="hasNext" class="flex justify-center mt-8">
-        <a href="/blog/2" class="text-sm no-underline">
+        <a href="/blog/2" class="text-sm no-underline text-blue-light">
           Next Page
         </a>
       </div>

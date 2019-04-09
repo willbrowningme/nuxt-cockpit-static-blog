@@ -4,7 +4,7 @@
       <div class="text-grey-dark font-bold text-sm tracking-wide">
         {{ post._created | toDate }}
         <span class="ml-1 text-xs">•</span>
-        <a v-for="tag in post.tags" :key="tag" :href="'/category/'+tag" class="ml-1 no-underline">#{{ tag }}</a>
+        <a v-for="tag in post.tags" :key="tag" :href="'/category/'+tag" class="ml-1 no-underline text-blue-light">#{{ tag }}</a>
         <span class="mx-1 text-xs">•</span>
         <a href="#comments" class="no-underline text-grey-dark">
           {{ post.comments ? post.comments.length : 0 }}
