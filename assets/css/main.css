@@ -2,6 +2,10 @@
 
 @tailwind components;
 
+a {
+  @apply text-blue-light no-underline;
+}
+
 .content {
   width: 50rem;
 }
