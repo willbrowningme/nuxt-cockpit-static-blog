@@ -11,7 +11,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.5.1",
+    "@nuxtjs/axios": "^5.5.2",
     "cross-env": "^5.2.0",
     "nuxt": "^2.7.1"
   },
@@ -22,9 +22,9 @@
     "dayjs": "^1.8.14",
     "dotenv": "^6.2.0",
     "glob-all": "^3.1.0",
-    "highlight.js": "^9.15.6",
+    "highlight.js": "^9.15.8",
     "marked": "^0.5.2",
-    "nodemon": "^1.19.0",
+    "nodemon": "^1.19.1",
     "purgecss-webpack-plugin": "^1.5.0",
     "sanitize-html": "^1.20.1",
     "tailwindcss": "^0.7.4"
