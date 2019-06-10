@@ -11,19 +11,19 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.5.2",
+    "@nuxtjs/axios": "^5.5.4",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.7.1"
+    "nuxt": "^2.8.1"
   },
   "devDependencies": {
     "@nuxtjs/sitemap": "^0.1.2",
-    "autoprefixer": "^9.5.1",
-    "collect.js": "^4.12.2",
+    "autoprefixer": "^9.6.0",
+    "collect.js": "^4.12.5",
     "dayjs": "^1.8.14",
     "dotenv": "^6.2.0",
     "glob-all": "^3.1.0",
     "highlight.js": "^9.15.8",
-    "marked": "^0.5.2",
+    "marked": "^0.6.2",
     "nodemon": "^1.19.1",
     "purgecss-webpack-plugin": "^1.5.0",
     "sanitize-html": "^1.20.1",
