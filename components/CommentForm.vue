@@ -2,14 +2,14 @@
   <form @submit="checkForm" method="post" :id="parent_id ? `reply-${parent_id}` : ''">
     <div class="flex flex-col md:flex-row mb-4">
     <div class="w-full md:w-1/2 md:mr-2">
-      <input v-model="name" type="text" name="name" placeholder="Your Name" class="block bg-grey-lighter mt-2 rounded w-full py-2 px-3">
+      <input v-model="name" type="text" name="name" placeholder="Your Name" class="block bg-gray-200 mt-2 rounded w-full py-2 px-3">
     </div>
     <div class="w-full md:w-1/2 md:ml-2">
-      <input v-model="email" type="email" name="email" placeholder="Your Email" class="block bg-grey-lighter mt-2 rounded w-full py-2 px-3">
+      <input v-model="email" type="email" name="email" placeholder="Your Email" class="block bg-gray-200 mt-2 rounded w-full py-2 px-3">
     </div>
     </div>
     <div class="mb-4">
-      <textarea v-model="comment" name="comment" rows="6" :placeholder="parent_id ? `Reply to ${parent_name}...` : 'Add a comment'" class="bg-grey-lighter rounded resize-none w-full h-20 py-2 px-3">
+      <textarea v-model="comment" name="comment" rows="6" :placeholder="parent_id ? `Reply to ${parent_name}...` : 'Add a comment'" class="bg-gray-200 rounded resize-none w-full h-20 py-2 px-3">
       </textarea>
     </div>
     <div class="mb-4">
@@ -20,9 +20,9 @@
     </div>
     <input type="text" name="website" v-model="website" class="hidden opacity-0 z-0" tabindex="-1" autocomplete="off">
     <div class="mb-4">
-      <input type="submit" value="Add Comment" :class="{ 'cursor-not-allowed opacity-50': loading }" class="cursor-pointer bg-blue hover:bg-blue-light text-white font-bold py-2 px-4 border-b-4 border-blue-dark hover:border-blue rounded">
+      <input type="submit" value="Add Comment" :class="{ 'cursor-not-allowed opacity-50': loading }" class="cursor-pointer bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-600 hover:border-blue-500 rounded">
     </div>
-    <div v-if="errors.length" class="mb-4 text-red">
+    <div v-if="errors.length" class="mb-4 text-red-500">
       <b>Please correct the following error(s):</b>
       <ul>
         <li v-for="error in errors" :key="error">
@@ -30,7 +30,7 @@
         </li>
       </ul>
     </div>
-    <div v-if="success" class="text-green mb-4">
+    <div v-if="success" class="text-green-500 mb-4">
       <b>Your comment is currently awaiting moderation</b>
     </div>
   </form>

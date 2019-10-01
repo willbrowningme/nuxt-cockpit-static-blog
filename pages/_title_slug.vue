@@ -1,19 +1,19 @@
 <template>
   <section>
     <article class="my-8">
-      <div class="text-grey-dark font-bold text-sm tracking-wide">
+      <div class="text-gray-600 font-bold text-sm tracking-wide">
         {{ post._created | toDate }}
         <span class="ml-1 text-xs">•</span>
         <a v-for="tag in post.tags" :key="tag" :href="'/category/'+tag" class="ml-1">#{{ tag }}</a>
         <span class="mx-1 text-xs">•</span>
-        <a href="#comments" class="no-underline text-grey-dark">
+        <a href="#comments" class="text-gray-600">
           {{ post.comments ? post.comments.length : 0 }}
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="12" height="12" preserveAspectRatio="xMinYMin" class="text-grey-dark fill-current">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="12" height="12" preserveAspectRatio="xMinYMin" class="inline-block text-gray-600 fill-current">
             <path d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z"></path>
           </svg>
         </a>
       </div>
-      <h1 class="mt-2">
+      <h1 class="mt-2 text-3xl font-bold">
         {{ post.title }}
       </h1>
       <div class="mt-4 markdown" v-html="$options.filters.parseMd(post.excerpt + '\n' + post.content)">
@@ -26,7 +26,7 @@
         <comment-form class="border-b-2" :post_id="post._id"/>
       </div>
 
-      <ul class="list-reset">
+      <ul>
         <comment
         v-for="comment in comments"
         :key="comment._id"

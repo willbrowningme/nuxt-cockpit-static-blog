@@ -2,22 +2,22 @@
   <section>
     <div class=my-8>
       <ul class="flex flex-col w-full p-0">
-        <li class="mb-6 w-full list-reset" v-for="(post, key) in posts" :key="key">
-          <div class="text-grey-dark font-bold text-sm tracking-wide">
+        <li class="mb-6 w-full" v-for="(post, key) in posts" :key="key">
+          <div class="text-gray-600 font-bold text-sm tracking-wide">
             {{ post._created | toDate }}
             <span class="ml-1 text-xs">•</span>
             <a v-for="tag in post.tags" :key="tag" :href="'/category/'+tag" class="ml-1">#{{ tag }}</a>
             <span class="mx-1 text-xs">•</span>
             <span>
               {{ post.comments ? post.comments.length : 0 }}
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="12" height="12" preserveAspectRatio="xMinYMin" class="text-grey-dark fill-current">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 24 24" width="12" height="12" preserveAspectRatio="xMinYMin" class="inline-block text-gray-600 fill-current">
                 <path d="M3 .565h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.958l-6.444 4.808A1 1 0 0 1 2 18.57v-4.006a2 2 0 0 1-2-2v-9a3 3 0 0 1 3-3z"></path>
               </svg>
             </span>
           </div>
 
-          <a :href="'/'+post.title_slug" class="no-underline">
-            <h2 class="my-2 text-grey-darkest text-lg lg:text-xl">
+          <a :href="'/'+post.title_slug">
+            <h2 class="my-2 text-gray-800 text-lg lg:text-xl font-bold">
               {{ post.title }}
             </h2>
           </a>
