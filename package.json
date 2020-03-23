@@ -11,22 +11,22 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.6.0",
+    "@nuxtjs/axios": "^5.9.5",
     "cross-env": "^5.2.1",
-    "nuxt": "^2.9.2"
+    "nuxt": "^2.12.0"
   },
   "devDependencies": {
     "@nuxtjs/sitemap": "^0.1.2",
-    "autoprefixer": "^9.6.1",
-    "collect.js": "^4.16.6",
-    "dayjs": "^1.8.16",
+    "autoprefixer": "^9.7.4",
+    "collect.js": "^4.20.3",
+    "dayjs": "^1.8.23",
     "dotenv": "^6.2.0",
-    "glob-all": "^3.1.0",
-    "highlight.js": "^9.15.10",
+    "glob-all": "^3.2.1",
+    "highlight.js": "^9.18.1",
     "marked": "^0.7.0",
-    "nodemon": "^1.19.3",
+    "nodemon": "^1.19.4",
     "purgecss-webpack-plugin": "^1.6.0",
-    "sanitize-html": "^1.20.1",
-    "tailwindcss": "^1.1.2"
+    "sanitize-html": "^1.22.1",
+    "tailwindcss": "^1.2.0"
   }
 }
