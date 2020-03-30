@@ -39,7 +39,8 @@ export default {
   async asyncData ({ app, params, error, payload }) {
     if (payload) {
       return { posts: payload, category: params.tag }
-    } else {
+    } //else {
+    if(process.env.POSTS_URL) {
       let { data } = await app.$axios.post(process.env.POSTS_URL,
       JSON.stringify({
           filter: { published: true, tags: { $has:params.tag } },

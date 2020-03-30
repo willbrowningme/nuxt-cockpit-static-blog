@@ -47,7 +47,8 @@ export default {
   async asyncData ({ app, params, error, payload }) {
     if (payload) {
       return { posts: payload.posts, page: params.page, hasNext: payload.hasNext }
-    } else {
+    } //else {
+    if(process.env.POSTS_URL) {
       let { data } = await app.$axios.post(process.env.POSTS_URL,
       JSON.stringify({
           filter: { published: true },
