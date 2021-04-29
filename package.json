@@ -22,7 +22,7 @@
     "dayjs": "^1.8.23",
     "dotenv": "^6.2.0",
     "glob-all": "^3.2.1",
-    "highlight.js": "^9.18.1",
+    "highlight.js": "^10.4.1",
     "marked": "^0.7.0",
     "nodemon": "^1.19.4",
     "purgecss-webpack-plugin": "^1.6.0",
