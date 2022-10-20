@@ -22,11 +22,11 @@
     "dayjs": "^1.8.23",
     "dotenv": "^6.2.0",
     "glob-all": "^3.2.1",
-    "highlight.js": "^9.18.1",
-    "marked": "^0.7.0",
-    "nodemon": "^1.19.4",
+    "highlight.js": "^11.6.0",
+    "marked": "^4.1.1",
+    "nodemon": "^2.0.20",
     "purgecss-webpack-plugin": "^1.6.0",
-    "sanitize-html": "^1.22.1",
-    "tailwindcss": "^1.2.0"
+    "sanitize-html": "^2.7.2",
+    "tailwindcss": "^3.2.0"
   }
 }
